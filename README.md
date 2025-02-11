@@ -9,7 +9,7 @@ docker run weak-java-project
 ````
 # Docker 이미지에서 SBOM 생성
 ## Syft 설치
-- `brew install syft`
+- `brew install syft``
 ## Docker 이미지에서 SBOM 생성
 - `syft weak-java-project -o cyclonedx-json > sbom.json`
 ## SBOM 업로드 분석
