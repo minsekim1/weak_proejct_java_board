@@ -1,10 +1,12 @@
+package com.example;
+
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import java.security.SecureRandom;
 import java.util.Base64;
 
-public class SecureEncryption {
+public class App {
     
     // AES 암호화 함수
     public static String encrypt(String data, SecretKey key) throws Exception {
