@@ -1,15 +1,9 @@
-# OpenJDK 11 이미지를 기반으로 설정
-FROM openjdk:11-jre-slim
+FROM tomcat:9.0-jdk11-openjdk
 
-# 작업 디렉터리 생성
-WORKDIR /app
+# 기본 ROOT 애플리케이션 제거 (선택 사항)
+RUN rm -rf /usr/local/tomcat/webapps/ROOT*
 
-# 자바 소스 파일을 컨테이너에 복사
-COPY . /app
+# 생성된 WAR 파일을 Tomcat의 webapps 디렉토리로 복사
+COPY target/weak-java-project-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
-# Maven을 사용하여 자바 프로젝트 빌드 (필요한 경우)
-RUN apt-get update && apt-get install -y maven
-RUN mvn clean install
-
-# 자바 프로그램 실행
-CMD ["java", "-cp", "target/your-app.jar", "com.yourpackage.SecureEncryption"]
+EXPOSE 8080
