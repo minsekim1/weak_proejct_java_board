@@ -32,11 +32,11 @@ sudo docker build -t my-java-app .
 sudo docker run -d --restart always --network host --name my-java-app my-java-app
 
 sudo docker ps
-sudo docker logs -f 4acc74156657
-sudo docker restart 4acc74156657
+sudo docker logs -f {CONTAINER_ID}
+sudo docker restart {CONTAINER_ID}
 
 
-sudo docker stop 4acc74156657
-sudo docker rm 4acc74156657
+sudo docker stop {CONTAINER_ID}
+sudo docker rm {CONTAINER_ID}
 sudo docker rmi -f my-java-app
 ```
