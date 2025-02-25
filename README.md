@@ -27,13 +27,14 @@ docker run weak-java-project
 
 # 도커 명령어 리스트
 ```
-mvn clean package && sudo docker build -t my-java-app .
-
+(옵션) mvn clean package
+sudo docker build -t my-java-app .
 sudo docker run -d -p 8080:8080 my-java-app
-sudo docker ps
-sudo docker logs -f a15b9308c937
 
-sudo docker stop b734f30aa34a
-sudo docker rm b734f30aa34a
+sudo docker ps
+sudo docker logs -f f362ccf98a5e
+
+sudo docker stop f362ccf98a5e
+sudo docker rm f362ccf98a5e
 sudo docker rmi -f my-java-app
 ```
