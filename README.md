@@ -32,12 +32,11 @@ sudo docker build -t my-java-app .
 sudo docker run -d --network host my-java-app
 
 sudo docker ps
-sudo docker logs -f edf1a8029ddc
-sudo docker restart edf1a8029ddc
-sudo docker inspect edf1a8029ddc | grep IPAddress
+sudo docker logs -f e4c110f049e7
+sudo docker restart e4c110f049e7
 
 
-sudo docker stop edf1a8029ddc
-sudo docker rm edf1a8029ddc
+sudo docker stop e4c110f049e7
+sudo docker rm e4c110f049e7
 sudo docker rmi -f my-java-app
 ```
