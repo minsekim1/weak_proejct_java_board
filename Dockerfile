@@ -5,6 +5,7 @@ WORKDIR /app
 COPY pom.xml .
 COPY src/ ./src/
 # 클린 빌드 및 패키지 생성
+COPY target/ ./target/
 # RUN mvn clean package
 
 # Runtime Stage: Tomcat에 WAR 배포
