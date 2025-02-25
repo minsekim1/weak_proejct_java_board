@@ -29,14 +29,14 @@ docker run weak-java-project
 ```
 (옵션) mvn clean package
 sudo docker build -t my-java-app .
-sudo docker run -d --restart always --name my-java-app my-java-app
+sudo docker run -d --restart always --network host --name my-java-app my-java-app
 
 sudo docker ps
-sudo docker logs -f 1dcdd27019fe
-sudo docker restart 1dcdd27019fe
+sudo docker logs -f 4acc74156657
+sudo docker restart 4acc74156657
 
 
-sudo docker stop 1dcdd27019fe
-sudo docker rm 1dcdd27019fe
+sudo docker stop 4acc74156657
+sudo docker rm 4acc74156657
 sudo docker rmi -f my-java-app
 ```
