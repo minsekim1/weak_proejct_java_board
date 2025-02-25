@@ -1,6 +1,7 @@
 # Build Stage: Maven으로 WAR 파일 빌드
 # FROM maven:3.8.6-openjdk-8 AS build
-FROM maven:3.8.6-openjdk-8 AS build
+FROM arm32v7/maven:3.6.3-openjdk-11 AS build
+
 
 WORKDIR /app
 # pom.xml과 소스코드를 복사
@@ -11,7 +12,7 @@ RUN mvn clean package
 
 # Runtime Stage: Tomcat에 WAR 배포
 # FROM tomcat:9.0-jdk11-openjdk
-FROM tomcat:9.0-jdk11-openjdk
+FROM arm32v7/tomcat:9.0
 
 # 기존 ROOT 애플리케이션 삭제 (선택 사항)
 RUN rm -rf /usr/local/tomcat/webapps/ROOT*
