@@ -29,12 +29,15 @@ docker run weak-java-project
 ```
 (옵션) mvn clean package
 sudo docker build -t my-java-app .
-sudo docker run -d -p 8080:8080 my-java-app
+sudo docker run -d --network host my-java-app
 
 sudo docker ps
-sudo docker logs -f f362ccf98a5e
+sudo docker logs -f edf1a8029ddc
+sudo docker restart edf1a8029ddc
+sudo docker inspect edf1a8029ddc | grep IPAddress
 
-sudo docker stop f362ccf98a5e
-sudo docker rm f362ccf98a5e
+
+sudo docker stop edf1a8029ddc
+sudo docker rm edf1a8029ddc
 sudo docker rmi -f my-java-app
 ```
