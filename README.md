@@ -11,7 +11,7 @@ docker run weak-java-project
 
 # Docker 이미지에서 SBOM 생성
 ## Syft 설치
-- `brew install syft``
+- `brew install syft`
 ## Docker 이미지에서 SBOM 생성
 - `syft weak-java-project -o cyclonedx-json > sbom.json`
 ## SBOM 업로드 분석
@@ -24,3 +24,16 @@ docker run weak-java-project
 - 이 프로젝트는 Model-View-Controller(MVC) 패턴을 적용하여 개발되었습니다.
 - 게시판의 각 기능 : 조회, 작성, 상세보기, 삭제
 - 이러한 기능들은 모두 서블릿과 JSP를 활용하여 구현되었으며, 데이터베이스와의 연동을 통해 동적인 웹 페이지를 생성하고 있습니다.
+
+# 도커 명령어 리스트
+```
+mvn clean package
+sudo docker build -t my-java-app-3 .
+
+sudo docker stop c3b4b31a8c50
+sudo docker rm c3b4b31a8c50
+sudo docker rmi -f my-java-app-1
+sudo docker run -d -p 8080:8080 my-java-app-3
+sudo docker logs -f c3b4b31a8c50
+sudo docker ps
+```
